@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker - Analytics</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" aria-label="Sidebar navigation">
+        <div class="brand">💸 Expense Tracker</div>
+        <nav class="nav-links">
+          <a href="index.html">Dashboard</a>
+          <a href="expenses.html">Expenses</a>
+          <a href="analytics.html" class="active">Analytics</a>
+        </nav>
+        <div class="toggle-row">
+          <button id="themeToggle" class="ghost">Toggle dark mode</button>
+        </div>
+        <div class="actions-column">
+          <button id="csvExport" class="primary">Download CSV</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header>
+          <h1 class="page-title">Analytics</h1>
+          <p class="subtitle">Visualize where your money goes month to month.</p>
+        </header>
+
+        <p id="analyticsEmpty" class="empty-state">No data yet. Add expenses to populate charts.</p>
+
+        <section class="grid-2">
+          <article class="card chart-box">
+            <h2 class="panel-title">Spending by Category</h2>
+            <canvas id="pieChart" aria-label="Pie chart for spending by category"></canvas>
+          </article>
+          <article class="card chart-box">
+            <h2 class="panel-title">Spending Over Time</h2>
+            <canvas id="lineChart" aria-label="Line chart for spending over time"></canvas>
+          </article>
+        </section>
+
+        <section class="card chart-box">
+          <h2 class="panel-title">Category Comparison</h2>
+          <canvas id="barChart" aria-label="Bar chart for category comparison"></canvas>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="assets/js/analytics.js"></script>
+  </body>
+</html>
